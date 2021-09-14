@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 
 //Lo hago a modo de clase para que sea más legible.
 class Server {
@@ -11,6 +12,13 @@ class Server {
 
         this.middlewares();
         this.routes();
+        this.views();
+    }
+
+    views() {
+        const viewPath = path.join(__dirname, '../views');
+        this.app.set('view engine', 'pug');
+        this.app.set('views', viewPath);
     }
 
     middlewares() {
