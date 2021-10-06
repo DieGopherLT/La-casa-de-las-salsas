@@ -4,34 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>La casa de las salsas</title>
-   <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
-            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </nav>
+    <div class="py-2 bg-dark">
+        <nav class="container navbar navbar-expand-lg navbar-dark bg-dark">
+            <a href="index.html"><img src="Imagenes/Papa20tarasca.png" height="50px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse ms-3" id="menu">
+                <ul class="mt-3 mr-auto mt-lg-0 navbar-nav w-100">
+                    <div class="flex-row d-flex flex-column flex-lg-row justify-content-between w-100">
+                        <div class="d-flex flex-column flex-lg-row">
+                            <li class="navbar-item active">
+                                <a href="#" class="nav-link">Menú</a>
+                            </li>
+                            <li class="navbar-item active">
+                                <a href="#" class="nav-link">Sobre nosotros</a>
+                            </li>
+                        </div>
+                        <div class="d-flex flex-column flex-lg-row">
+                            <li class="navbar-item active">
+                                <a href="#" class="nav-link">Crear cuenta</a>
+                            </li>
+                            <li class="navbar-item active">
+                                <a href="#" class="nav-link">Iniciar sesión</a>
+                            </li>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    
     <header>
         <div class="container">
             <h1 class="text-center">MENU</h1>
             <hr>
-        </div></header>
-    <section class="store">
+        </div>
+    </header>
+
+    <main class="store">
+
         <div class="container">
             <div class="items">
                 <div class="row">
                     <div class="col-12 col-md-4"> </div>
                     <div class="col-12 col-md-4">  
-                        <div class="item shadow mb-4">
-                             
-                            <center><h3 class="item-title">Papa tarasca</h3></center>
-                            <center><img class="item-image img-fluid" src="./imagenes/Papas.jpeg" width="200px"></center>
+                        <div class="p-2 mb-4 shadow item d-flex flex-column align-items-center">
+                            <h3 class="item-title">Papa tarasca</h3>
+                            <img class="item-image img-fluid" src="./imagenes/Papas.jpeg" width="200px">
+                            <div class="py-1 item-details">
+                                <h4 class="text-center item-price">50$</h4>
+                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="items">
+                <div class="row">
 
-                            <div class="item-details">
-                                <center><h4 class="item-price">50$</h4></center>
-                                <center><button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button></center>
+                    <div class="col-6 col-md-4">   
+                        <div class="p-2 mb-4 shadow item d-flex flex-column align-items-center">    
+                            <h3 class="item-title">Salsa 1</h3>
+                            <img class="item-image" src="./imagenes/Imagen_1.jpeg">
+                            <div class="py-1 item-details">
+                                <h4 class="text-center item-price">0$</h4>
+                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4">   
+                        <div class="p-2 mb-4 shadow item d-flex flex-column align-items-center">    
+                            <h3 class="item-title">Salsa 2</h3>
+                            <img class="item-image" src="./imagenes/Imagen_2.jpeg">
+                            <div class="py-1 item-details">
+                                <h4 class="text-center item-price">0$</h4>
+                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-6 col-md-4">   
+                        <div class="p-2 mb-4 shadow item d-flex flex-column align-items-center">    
+                            <h3 class="item-title">Salsa 3</h3>
+                            <img class="item-image" src="./imagenes/Imagen_3.jpeg">
+                            <div class="py-1 item-details">
+                                <h4 class="text-center item-price">0$</h4>
+                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="items">
+                <div class="row">
+
+                    <div class="col-6 col-md-4">   
+                        <div class="p-2 mb-4 shadow item d-flex flex-column align-items-center">   
+                            <h3 class="item-title">Salsa 4</h3>
+                            <img class="item-image" src="./imagenes/Imagen_4.jpeg">
+
+                            <div class="py-1 item-details">
+                                <h4 class="text-center item-price">0$</h4>
+                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4">   
+                        <div class="p-2 mb-4 shadow item d-flex flex-column align-items-center">   
+                            <h3 class="item-title">Salsa 5</h3>
+                            <img class="item-image" src="./imagenes/Imagen_5.jpeg">
+                            <div class="py-1 item-details">
+                                <h4 class="text-center item-price">0$</h4>
+                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-6 col-md-4">   
+                        <div class="p-2 mb-4 shadow item d-flex flex-column align-items-center">   
+                            <h3 class="item-title">Salsa 6</h3>
+                            <img class="item-image" src="./imagenes/Imagen_6.jpeg">
+                            <div class="py-1 item-details">
+                                <h4 class="text-center item-price">0$</h4>
+                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                             </div>
                         </div>
                     </div>
@@ -41,34 +151,37 @@
         <div class="container">
             <div class="items">
                 <div class="row">
+                    
                     <div class="col-6 col-md-4">   
-                        <div class="item shadow mb-4">    
-                            <center><h3 class="item-title">Salsa 1</h3></center>
-                            <center><img class="item-image img-fluid" src="./imagenes/Imagen_1.jpeg" width="200px"></center>
+                        <div class="p-2 mb-4 shadow item d-flex flex-column align-items-center">   
+                            <h3 class="item-title">Salsa 7</h3>
+                            <img class="item-image" src="./imagenes/Imagen_7.jpeg">
 
-                            <div class="item-details">
-                                <center><h4 class="item-price">0$</h4></center>
-                                <center><button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button></center>
+                            <div class="py-1 item-details">
+                                <h4 class="text-center item-price">0$</h4>
+                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-6 col-md-4">   
-                        <div class="item shadow mb-4">    
-                            <center><h3 class="item-title">Salsa 2</h3></center>
-                            <center><img class="item-image img-fluid" src="./imagenes/Imagen_2.jpeg" width="300px"></center>
-                            <div class="item-details">
-                                <center><h4 class="item-price">0$</h4></center>
-                                <center><button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button></center>
+                        <div class="p-2 mb-4 shadow item d-flex flex-column align-items-center">   
+                            <h3 class="item-title">Salsa 8</h3>
+                            <img class="item-image" src="./imagenes/Imagen_8.jpeg">
+                            <div class="py-1 item-details">
+                                <h4 class="text-center item-price">0$</h4>
+                                    <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-6 col-md-4">   
-                        <div class="item shadow mb-4">    
-                            <center><h3 class="item-title">Salsa 3</h3></center>
-                            <center><img class="item-image img-fluid" src="./imagenes/Imagen_3.jpeg" width="300px"></center>
-                            <div class="item-details">
-                                <center><h4 class="item-price">0$</h4></center>
-                                <center><button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button></center>
+                        <div class="p-2 mb-4 shadow item d-flex flex-column align-items-center">   
+                            <h3 class="item-title">Salsa 9</h3>
+                            <img class="item-image" src="./imagenes/Imagen_9.jpeg">
+                            <div class="py-1 item-details">
+                                <h4 class="text-center item-price">0$</h4>
+                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                             </div>
                         </div>
                     </div>
@@ -78,115 +191,45 @@
         <div class="container">
             <div class="items">
                 <div class="row">
-                    <div class="col-6 col-md-4">   
-                        <div class="item shadow mb-4">    
-                            <center><h3 class="item-title">Salsa 4</h3></center>
-                            <center><img class="item-image img-fluid" src="./imagenes/Imagen_4.jpeg" width="300px"></center>
 
-                            <div class="item-details">
-                                <center><h4 class="item-price">0$</h4></center>
-                                <center><button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button></center>
+                    <div class="col-6 col-md-4">   
+                        <div class="p-2 mb-4 shadow item d-flex flex-column align-items-center">   
+                            <h3 class="item-title">Salsa 10</h3>
+                            <img class="item-image" src="./imagenes/Imagen_10.jpeg">
+
+                            <div class="py-1 item-details">
+                                <h4 class="text-center item-price">0$</h4>
+                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-6 col-md-4">   
-                        <div class="item shadow mb-4">    
-                            <center><h3 class="item-title">Salsa 5</h3></center>
-                            <center><img class="item-image img-fluid" src="./imagenes/Imagen_5.jpeg" width="230px"></center>
-                            <div class="item-details">
-                                <center><h4 class="item-price">0$</h4></center>
-                                <center><button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button></center>
+                        <div class="p-2 mb-4 shadow item d-flex flex-column align-items-center">   
+                            <h3 class="item-title">Salsa 11</h3>
+                            <img class="item-image" src="./imagenes/Imagen_11.jpeg">
+                            <div class="py-1 item-details">
+                                <h4 class="text-center item-price">0$</h4>
+                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-6 col-md-4">   
-                        <div class="item shadow mb-4">    
-                            <center><h3 class="item-title">Salsa 6</h3></center>
-                            <center><img class="item-image img-fluid" src="./imagenes/Imagen_6.jpeg" width="150px"></center>
-                            <div class="item-details">
-                                <center><h4 class="item-price">0$</h4></center>
-                                <center><button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button></center>
+                        <div class="p-2 mb-4 shadow item d-flex flex-column align-items-center">   
+                            <h3 class="item-title">Salsa secreta</h3>
+                            <img class="item-image" src="./imagenes/secreta.png">
+                            <div class="py-1 item-details">
+                                <h4 class="text-center item-price">0$</h4>
+                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="items">
-                <div class="row">
-                    <div class="col-6 col-md-4">   
-                        <div class="item shadow mb-4">    
-                            <center><h3 class="item-title">Salsa 7</h3></center>
-                            <center><img class="item-image img-fluid" src="./imagenes/Imagen_7.jpeg" width="200px"></center>
-
-                            <div class="item-details">
-                                <center><h4 class="item-price">0$</h4></center>
-                                <center><button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button></center>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4">   
-                        <div class="item shadow mb-4">    
-                            <center><h3 class="item-title">Salsa 8</h3></center>
-                            <center><img class="item-image img-fluid" src="./imagenes/Imagen_8.jpeg" width="150px"></center>
-                            <div class="item-details">
-                                <center><h4 class="item-price">0$</h4></center>
-                                    <center><button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button></center>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4">   
-                        <div class="item shadow mb-4">    
-                            <center><h3 class="item-title">Salsa 9</h3></center>
-                            <center><img class="item-image img-fluid" src="./imagenes/Imagen_9.jpeg" width="150px"></center>
-                            <div class="item-details">
-                                <center><h4 class="item-price">0$</h4></center>
-                                <center><button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button></center>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="items">
-                <div class="row">
-                    <div class="col-6 col-md-4">   
-                        <div class="item shadow mb-4">    
-                            <center><h3 class="item-title">Salsa 10</h3></center>
-                            <center><img class="item-image img-fluid" src="./imagenes/Imagen_10.jpeg" width="150px"></center>
-
-                            <div class="item-details">
-                                <center><h4 class="item-price">0$</h4></center>
-                                <center><button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button></center>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4">   
-                        <div class="item shadow mb-4">    
-                            <center><h3 class="item-title">Salsa 11</h3></center>
-                            <center><img class="item-image img-fluid" src="./imagenes/Imagen_11.jpeg" width="225px"></center>
-                            <div class="item-details">
-                                <center><h4 class="item-price">0$</h4></center>
-                                <center><button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button></center>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4">   
-                        <div class="item shadow mb-4">    
-                            <center><h3 class="item-title">Salsa secreta</h3></center>
-                            <center><img class="item-image img-fluid" src="./imagenes/secreta.png" width="155px"></center>
-                            <div class="item-details">
-                                <center><h4 class="item-price">0$</h4></center>
-                                <center><button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button></center>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
+    
     <section class="shopping-cart">
         <div class="container">
             <h1 class="text-center">CARRITO</h1>
@@ -218,22 +261,22 @@
             <div class="row">
                 <div class="col-12">
                     <div class="shopping-cart-total d-flex align-items-center">
-                        <p class="mb-0">Total :</p>
-                        <p class="ml-4 mb-0 shoppingCartTotal"> 0$</p>
-                        <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
+                        <p class="mb-0">Total: </p>
+                        <p class="mb-0 ml-4 shoppingCartTotal"> 0$</p>
+                        <div class="ml-auto toast bg-info" role="alert" aria-live="assertive" aria-atomic="true"
                             data-delay="2000">
                             <div class="toast-header">
                                 <span>✅</span>
-                                <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
-                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                <strong class="ml-1 mr-auto text-secondary">Elemento en el carrito</strong>
+                                <button type="button" class="mb-1 ml-2 close" data-dismiss="toast" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="toast-body text-white">
+                            <div class="text-white toast-body">
                                 Se aumentó correctamente la cantidad
                             </div>
                         </div>
-                        <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal"
+                        <button class="ml-auto btn btn-success comprarButton" type="button" data-toggle="modal"
                             data-target="#comprarModal">Comprar</button>
                     </div>
                 </div>
@@ -267,8 +310,8 @@
         </div>
 
     </section>
-    <footer class="bg-dark p-3 mt-5">
-        <p class="text-center m-0 text-muted">La casa de las salsas</p>
+    <footer class="p-3 mt-5 bg-dark">
+        <p class="m-0 text-center text-muted">La casa de las salsas</p>
     </footer>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
