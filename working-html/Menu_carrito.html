@@ -260,23 +260,26 @@
             <!-- START TOTAL -->
             <div class="row">
                 <div class="col-12">
-                    <div class="shopping-cart-total d-flex align-items-center">
-                        <p class="mb-0">Total: <span class="mb-0 shoppingCartTotal">0$</span> </p>
-                        <div class="ml-auto toast bg-info" role="alert" aria-live="assertive" aria-atomic="true"
-                            data-delay="2000">
-                            <div class="toast-header">
-                                <span>✅</span>
-                                <strong class="ml-1 mr-auto text-secondary">Elemento en el carrito</strong>
-                                <button type="button" class="mb-1 ml-2 close" data-dismiss="toast" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="text-white toast-body">
-                                Se aumentó correctamente la cantidad
-                            </div>
-                        </div>
-                        <button class="ml-auto btn btn-success comprarButton" type="button" data-toggle="modal"
-                            data-target="#comprarModal">Comprar</button>
+                    <div class="shopping-cart-total d-flex flex-column justify-content-md-between gap-3 flex-md-row align-items-center">
+                        <p class="mb-0 d-flex gap-1">Total: <span class="mb-0 shoppingCartTotal">0$</span> </p>
+<!--                        <div class="ml-auto toast bg-info" role="alert" aria-live="assertive" aria-atomic="true"-->
+<!--                            data-delay="2000">-->
+<!--                            <div class="toast-header">-->
+<!--                                <span>✅</span>-->
+<!--                                <strong class="ml-1 mr-auto text-secondary">Elemento en el carrito</strong>-->
+<!--                                <button type="button" class="mb-1 ml-2 close" data-dismiss="toast" aria-label="Close">-->
+<!--                                    <span aria-hidden="true">&times;</span>-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                            <div class="text-white toast-body">-->
+<!--                                Se aumentó correctamente la cantidad-->
+<!--                            </div>-->
+<!--                        </div>-->
+	                    <div class="w-100 row d-md-block">
+		                    <button class="col-12 col-md-2 offset-md-10 ml-auto btn btn-success comprarButton" type="button" data-toggle="modal"
+		                            data-target="#comprarModal">Comprar
+		                    </button>
+	                    </div>
                     </div>
                 </div>
             </div>
