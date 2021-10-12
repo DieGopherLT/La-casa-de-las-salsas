@@ -1,6 +1,13 @@
-# Pasos para descargar y arrancar el proyecto.
+# Ingeniería de Software 2 - Proyecto
 
-1. Clonar o descargar el zip de este repositorio en el directorio deseado.
-2. Ejecutar el comando "npm install" para instalar las dependencias.
+Equipo 2, integrantes:
+- Diego López Torres
+- Alan Isaac Atzin Reyes Marquez
+- Israel Abisai Medrano Blancarte
+
+## Pasos para descargar y arrancar el proyecto.
+
+1. Clonar (git clone) o descargar y descomprimir el zip de este repositorio en el directorio deseado.
+2. Ejecutar el comando "npm install" dentro del directorio del proyecto para instalar las dependencias.
 3. Esperar a que se instalen.
-4. Una vez instaladas, para arrancar la app ejecutar "npm run dev".
+4. Una vez instaladas las dependencias, para arrancar la app ejecutar "npm run dev".
