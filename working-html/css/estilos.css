@@ -44,6 +44,10 @@ footer {
   border-radius: 20px;
 }
 
+.shopping-cart-item {
+    gap: 1rem;
+}
+
 .item {
   padding: 10px;
   border-radius: 20px;
