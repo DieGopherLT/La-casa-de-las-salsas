@@ -1,10 +1,35 @@
 doctype html
 html(lang="en")
     head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+        title La casa de las salsas
+        link(rel='stylesheet' href='css/bootstrap.min.css')
+        link(rel='stylesheet' href='css/estilos.css')
     body
-        h1 This belongs to layout
+        .py-2.bg-dark
+            nav.container.navbar.navbar-expand-lg.navbar-dark.bg-dark
+                a(href='index.html')
+                    img(src='Imagenes/Papa20tarasca.png' height='50px')
+                button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#menu' aria-controls='menu' aria-expanded='false' aria-label='Toggle navigation')
+                    span.navbar-toggler-icon
+                #menu.collapse.navbar-collapse.ms-3
+                    ul.mt-3.mr-auto.mt-lg-0.navbar-nav.w-100
+                        .flex-row.d-flex.flex-column.flex-lg-row.justify-content-between.w-100
+                            .d-flex.flex-column.flex-lg-row
+                                li.navbar-item.active
+                                    a.nav-link(href='Menu_carrito.html') Menú
+                                li.navbar-item.active
+                                    a.nav-link(href='about.html') Sobre nosotros
+                            .d-flex.flex-column.flex-lg-row
+                                li.navbar-item.active
+                                    a.nav-link(href='#') Crear cuenta
+                                li.navbar-item.active
+                                    a.nav-link(href='#') Iniciar sesión
         block content
+
+        footer.p-3.mt-5.bg-dark
+            p.m-0.text-center.text-muted La casa de las salsas
+        script(src='./js/bootstrap.min.js')
+
+        block scripts
