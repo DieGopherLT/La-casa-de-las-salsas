@@ -1,0 +1,166 @@
+extends layouts/base
+
+block styles
+    link(rel='stylesheet' href='/css/estilos.css')
+
+block content
+    header
+        .container
+            h1.text-center MENU
+            hr
+    main.store
+        .container
+            .items
+                .row
+                    .col-12.col-md-4
+                    .col-12.col-md-4
+                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
+                            h3.item-title Papa tarasca
+                            img.item-image.img-fluid(src='/assets/images/Papas.jpeg' width='200px')
+                            .py-1.item-details
+                                h4.text-center.item-price 50$
+                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
+        .container
+            .items
+                .row
+                    .col-12.col-md-6.col-lg-4
+                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
+                            h3.item-title Salsa 1
+                            img.item-image(src='/assets/images/Imagen_1.jpeg')
+                            .py-1.item-details
+                                h4.text-center.item-price 0$
+                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
+                    .col-12.col-md-6.col-lg-4
+                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
+                            h3.item-title Salsa 2
+                            img.item-image(src='/assets/images/Imagen_2.jpeg')
+                            .py-1.item-details
+                                h4.text-center.item-price 0$
+                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
+                    .col-12.col-md-6.col-lg-4
+                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
+                            h3.item-title Salsa 3
+                            img.item-image(src='/assets/images/Imagen_3.jpeg')
+                            .py-1.item-details
+                                h4.text-center.item-price 0$
+                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
+                    .col-12.col-md-6.col-lg-4
+                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
+                            h3.item-title Salsa 4
+                            img.item-image(src='/assets/images/Imagen_4.jpeg')
+                            .py-1.item-details
+                                h4.text-center.item-price 0$
+                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
+                    .col-12.col-md-6.col-lg-4
+                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
+                            h3.item-title Salsa 5
+                            img.item-image(src='/assets/images/Imagen_5.jpeg')
+                            .py-1.item-details
+                                h4.text-center.item-price 0$
+                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
+                    .col-12.col-md-6.col-lg-4
+                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
+                            h3.item-title Salsa 6
+                            img.item-image(src='/assets/images/Imagen_6.jpeg')
+                            .py-1.item-details
+                                h4.text-center.item-price 0$
+                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
+                    .col-12.col-md-6.col-lg-4
+                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
+                            h3.item-title Salsa 7
+                            img.item-image(src='/assets/images/Imagen_7.jpeg')
+                            .py-1.item-details
+                                h4.text-center.item-price 0$
+                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
+                    .col-12.col-md-6.col-lg-4
+                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
+                            h3.item-title Salsa 8
+                            img.item-image(src='/assets/images/Imagen_8.jpeg')
+                            .py-1.item-details
+                                h4.text-center.item-price 0$
+                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
+                    .col-12.col-md-6.col-lg-4
+                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
+                            h3.item-title Salsa 9
+                            img.item-image(src='/assets/images/Imagen_9.jpeg')
+                            .py-1.item-details
+                                h4.text-center.item-price 0$
+                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
+                    .col-12.col-md-6.col-lg-4
+                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
+                            h3.item-title Salsa 10
+                            img.item-image(src='/assets/images/Imagen_10.jpeg')
+                            .py-1.item-details
+                                h4.text-center.item-price 0$
+                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
+                    .col-12.col-md-6.col-lg-4
+                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
+                            h3.item-title Salsa 11
+                            img.item-image(src='/assets/images/Imagen_11.jpeg')
+                            .py-1.item-details
+                                h4.text-center.item-price 0$
+                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
+                    .col-12.col-md-6.col-lg-4
+                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
+                            h3.item-title Salsa secreta
+                            img.item-image(src='/assets/images/secreta.png')
+                            .py-1.item-details
+                                h4.text-center.item-price 0$
+                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
+    section.shopping-cart
+        .container
+            h1.text-center CARRITO
+            hr
+            .row
+                .col-6
+                    .shopping-cart-header
+                        h6 Salsa
+                .col-2
+                    .shopping-cart-header
+                        h6.text-truncate Precio
+                .col-4
+                    .shopping-cart-header
+                        h6 Cantidad
+            // ? START SHOPPING CART ITEMS
+            .shopping-cart-items.shoppingCartItemsContainer
+            // ? END SHOPPING CART ITEMS
+            // START TOTAL
+            .row
+                .col-12
+                    .shopping-cart-total.d-flex.flex-column.justify-content-md-between.gap-3.flex-md-row.align-items-center
+                        p.mb-0.d-flex.gap-1
+                            | Total:
+                            span.mb-0.shoppingCartTotal 0$
+                        // <div class="ml-auto toast bg-info" role="alert" aria-live="assertive" aria-atomic="true"
+                        // data-delay="2000">
+                        // <div class="toast-header">
+                        // <span>✅</span>
+                        // <strong class="ml-1 mr-auto text-secondary">Elemento en el carrito</strong>
+                        // <button type="button" class="mb-1 ml-2 close" data-dismiss="toast" aria-label="Close">
+                        // <span aria-hidden="true">&times;</span>
+                        // </button>
+                        // </div>
+                        // <div class="text-white toast-body">
+                        // Se aumentó correctamente la cantidad
+                        // </div>
+                        // </div>
+                        .w-100.row.d-md-block
+                            button.col-12.col-md-2.offset-md-10.ml-auto.btn.btn-success.comprarButton(type='button' data-toggle='modal' data-target='#comprarModal')
+                                | Comprar
+            // END TOTAL
+            // START MODAL COMPRA
+            #comprarModal.modal.fade(tabindex='-1' aria-labelledby='comprarModalLabel' aria-hidden='true')
+                .modal-dialog.modal-dialog-centered
+                    .modal-content
+                        .modal-header
+                            h5#comprarModalLabel.modal-title Gracias por su compra
+                            button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                        .modal-body
+                            p Pronto recibir&aacute; su pedido
+                        .modal-footer
+                            button.btn.btn-secondary(type='button' data-dismiss='modal') Cerrar
+            // END MODAL COMPRA
+
+block scripts
+    script(src='/js/funcion_carrito.js')
