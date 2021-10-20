@@ -4,13 +4,14 @@ html(lang="en")
         meta(charset='UTF-8')
         meta(name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
         title La casa de las salsas
-        link(rel='stylesheet' href='css/bootstrap.min.css')
-        link(rel='stylesheet' href='css/estilos.css')
+        link(rel='stylesheet' href='/css/bootstrap.min.css')
+
+        block styles
     body
         .py-2.bg-dark
             nav.container.navbar.navbar-expand-lg.navbar-dark.bg-dark
-                a(href='index.html')
-                    img(src='Imagenes/Papa20tarasca.png' height='50px')
+                a(href='/')
+                    img(src='' height='50px')
                 button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#menu' aria-controls='menu' aria-expanded='false' aria-label='Toggle navigation')
                     span.navbar-toggler-icon
                 #menu.collapse.navbar-collapse.ms-3
@@ -18,18 +19,18 @@ html(lang="en")
                         .flex-row.d-flex.flex-column.flex-lg-row.justify-content-between.w-100
                             .d-flex.flex-column.flex-lg-row
                                 li.navbar-item.active
-                                    a.nav-link(href='Menu_carrito.html') Menú
+                                    a.nav-link(href='/menu') Menú
                                 li.navbar-item.active
-                                    a.nav-link(href='about.html') Sobre nosotros
+                                    a.nav-link(href='/nosotros') Sobre nosotros
                             .d-flex.flex-column.flex-lg-row
                                 li.navbar-item.active
-                                    a.nav-link(href='#') Crear cuenta
+                                    a.nav-link(href='/crear-cuenta') Crear cuenta
                                 li.navbar-item.active
-                                    a.nav-link(href='#') Iniciar sesión
+                                    a.nav-link(href='/iniciar-sesion') Iniciar sesión
         block content
 
         footer.p-3.mt-5.bg-dark
             p.m-0.text-center.text-muted La casa de las salsas
-        script(src='./js/bootstrap.min.js')
+        script(src='/js/bootstrap.min.js')
 
         block scripts
