@@ -28,7 +28,7 @@ class Server {
     }
 
     routes() {
-
+        this.app.use('/', require('../routes/pages.route'));
     }
 
     run() {
