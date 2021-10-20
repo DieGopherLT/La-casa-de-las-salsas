@@ -9,3 +9,7 @@ exports.aboutPage = (req, res) => {
 exports.menuPage = (req, res) => {
     res.render('menu');
 }
+
+exports.notFoundPage = (req, res) => {
+    res.render('notFound');
+}

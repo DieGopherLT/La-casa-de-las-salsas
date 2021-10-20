@@ -5,9 +5,10 @@ html(lang="en")
         meta(name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
         title La casa de las salsas
         link(rel='stylesheet' href='/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/general.css')
 
         block styles
-    body
+    body.d-flex.flex-column
         .py-2.bg-dark
             nav.container.navbar.navbar-expand-lg.navbar-dark.bg-dark
                 a(href='/')
@@ -29,7 +30,7 @@ html(lang="en")
                                     a.nav-link(href='/iniciar-sesion') Iniciar sesión
         block content
 
-        footer.p-3.mt-5.bg-dark
+        footer.p-3.bg-dark
             p.m-0.text-center.text-muted La casa de las salsas
         script(src='/js/bootstrap.min.js')
 
