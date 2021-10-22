@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const db = require('./db');
 
 //Lo hago a modo de clase para que sea más legible.
 class Server {
@@ -13,6 +14,11 @@ class Server {
         this.middlewares();
         this.routes();
         this.views();
+
+        db.authenticate()
+            .then(() => {
+                console.log('DataBase connected');
+            })
     }
 
     views() {
