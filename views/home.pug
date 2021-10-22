@@ -2,4 +2,19 @@ extends layouts/base
 
 block content
     main.flex-grow-1
-        h1.text-center Home Page
+        h1.text-center.mt-2 ¡Bienvenido a la casa de las salsas!
+
+        .container
+            .mt-4
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a venenatis eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas gravida ac est congue mattis. Vivamus accumsan feugiat felis sit amet accumsan.
+        .container-fluid.my-3
+            .row.p-3.bg-secondary
+                .col-12.col-md-6
+                    img.img-fluid(src='/assets/images/PapaTarasca.jpeg')
+                .col-12.col-md-6.d-flex.justify-content-center.align-items-center.flex-column.mt-2.mt-md-0
+                    p.text-light.text-center.text-md-start Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a venenatis eros.
+                    .d-grid.gap-2.w-100.d-md-flex.justify-content-md-center
+                        a.btn.btn-primary(href='/iniciar-sesion') Inicia sesión
+                        a.btn.btn-primary(href='/crear-cuenta') Crea tu cuenta
+
+
