@@ -15,7 +15,13 @@ class Server {
         this.routes();
         this.views();
 
-        db.authenticate()
+        require('../models/Customer.models');
+        require('../models/Employee.models');
+        require('../models/Saucer.models');
+        require('../models/Sauces.models');
+        require('../models/Order.models');
+        require('../models/DetailOrder.models');
+        db.sync()
             .then(() => {
                 console.log('DataBase connected');
             })
