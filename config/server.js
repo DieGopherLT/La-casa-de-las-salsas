@@ -1,5 +1,12 @@
 const express = require('express');
 const path = require('path');
+const db = require('./db');
+require('../models/Customer.models');
+require('../models/Employee.models');
+require('../models/Saucer.models');
+require('../models/Sauces.models');
+require('../models/Order.models');
+require('../models/DetailOrder.models');
 
 //Lo hago a modo de clase para que sea más legible.
 class Server {
@@ -13,6 +20,10 @@ class Server {
         this.middlewares();
         this.routes();
         this.views();
+        db.sync()
+            .then(() => {
+                console.log('DataBase connected');
+            })
     }
 
     views() {
