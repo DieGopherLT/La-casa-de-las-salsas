@@ -20,7 +20,7 @@ class Server {
         this.middlewares();
         this.routes();
         this.views();
-        db.sync()
+        db.sync({ alter: true, logging: false })
             .then(() => {
                 console.log('DataBase connected');
             })
