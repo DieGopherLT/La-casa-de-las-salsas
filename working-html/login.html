@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>La casa de las salsas</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="py-2 bg-dark">
+        <nav class="container navbar navbar-expand-lg navbar-dark bg-dark">
+            <a href="index.html"><img src="Imagenes/Papa tarasca.png" height="50px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse ms-3" id="menu">
+                <ul class="mt-3 mr-auto mt-lg-0 navbar-nav w-100">
+                    <div class="flex-row d-flex flex-column flex-lg-row justify-content-between w-100">
+                        <div class="d-flex flex-column flex-lg-row">
+                            <li class="navbar-item active">
+                                <a href="Menu_carrito.html" class="nav-link">Menú</a>
+                            </li>
+                            <li class="navbar-item active">
+                                <a href="about.html" class="nav-link">Sobre nosotros</a>
+                            </li>
+                        </div>
+                        <div class="d-flex flex-column flex-lg-row">
+                            <li class="navbar-item active">
+                                <a href="register.html" class="nav-link">Crear cuenta</a>
+                            </li>
+                            <li class="navbar-item active">
+                                <a href="login.html" class="nav-link">Iniciar sesión</a>
+                            </li>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div><li></li></div>
+
+    <header>
+        <div class="container">
+            <h1 class="text-center">Login</h1>
+            <hr>
+        </div>
+    </header>
+
+    <div class="contenedor">
+        <form action="/action_page.php" class="needs-validation" novalidate method="GET">
+            
+                <label for="name" class="form_label">Nombre:</label>
+                <input type="text" class="form-control" id="name" placeholder="Nombre" name="name" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Por favor llene el campo de "Nombre"</div>
+            
+            
+                <label for="pass" class="form_label">Contraseña:</label>
+                <input type="password" class="form-control" id="pass" placeholder="Contraseña" name="pass" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Por favor llene el campo de "Contraseña"</div>
+
+            <button type="submit" class="btn btn-primary btn_submit" >Entrar</button>
+                    
+        </form>  
+        <script>
+          // Disable form submissions if there are invalid fields
+            (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+              // Get the forms we want to add validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+              // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    }
+                form.classList.add('was-validated');
+                }, false);
+                });
+                }, false);
+            })();
+        </script>
+    </div>
+
+    <footer class="p-3 mt-5 bg-dark">
+        <p class="m-0 text-center text-muted">La casa de las salsas</p>
+    </footer>
+
+	<script src="./js/bootstrap.min.js"></script>
+    <script src="./js/funcion_carrito.js"></script>
+</body>
+</html>
