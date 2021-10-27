@@ -40,44 +40,64 @@
             </div>
         </nav>
     </div>
-    <div class="container">
-        <form action="/action_page.php" class="needs-validation" novalidate>
-            <div class="form-group">
-                <label for="uname">Username:</label>
-                <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+    <div><li></li></div>
+
+    <header>
+        <div class="container">
+            <h1 class="text-center">Registro</h1>
+            <hr>
+        </div>
+    </header>
+
+    <div class="contenedor">
+        <form action="/action_page.php" class="needs-validation" novalidate method="GET">
+            
+                <label for="uname" class="form_label">Nombre:</label>
+                <input type="text" class="form-control" id="uname" placeholder="Nombre" name="uname" required>
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
-            </div>
-            <div class="form-group">
-                <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+            
+            
+                <label for="pwd" class="form_label">Contraseña:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Contraseña" name="pswd" required>
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="remember" required> I agree on blabla.
+            
+            
+                <label for="email" class="form_label">E-mail:</label>
+                <input type="password" class="form-control" id="email" placeholder="E-mail" name="cemail" required>
                 <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Check this checkbox to continue.</div>
-                </label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            
+                <label for="phone" class="form_label">Telefono:</label>
+                <input type="password" class="form-control" id="phone" placeholder="Telefono" name="nphone" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+
+                <label for="direc" class="form_label">Dirección:</label>
+                <input type="text" class="form-control" id="direc" placeholder="Dirección" name="direc" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+
+            <button type="submit" class="btn btn-primary btn_submit" >Registrar</button>
+                    
+        </form>  
         <script>
-          // Deshabilitar el envío de formularios si hay campos inválidos
+          // Disable form submissions if there are invalid fields
             (function() {
-                'use strict';
-                window.addEventListener('load', function() {
-                // Obtener los formularios a los que queremos agregar estilos de validación
-                    var forms = document.getElementsByClassName('needs-validation');
-                    var validation = Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('submit', function(event) {
-                        if (form.checkValidity() === false) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
+            'use strict';
+            window.addEventListener('load', function() {
+              // Get the forms we want to add validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+              // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    }
+                form.classList.add('was-validated');
+                }, false);
                 });
                 }, false);
             })();
