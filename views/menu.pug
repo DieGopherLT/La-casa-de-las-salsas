@@ -23,90 +23,17 @@ block content
         .container
             .items
                 .row
-                    .col-12.col-md-6.col-lg-4
-                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
-                            h3.item-title Salsa 1
-                            img.item-image(src='/assets/images/Imagen_1.jpeg')
-                            .py-1.item-details
-                                h4.text-center.item-price 0$
-                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
-                    .col-12.col-md-6.col-lg-4
-                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
-                            h3.item-title Salsa 2
-                            img.item-image(src='/assets/images/Imagen_2.jpeg')
-                            .py-1.item-details
-                                h4.text-center.item-price 0$
-                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
-                    .col-12.col-md-6.col-lg-4
-                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
-                            h3.item-title Salsa 3
-                            img.item-image(src='/assets/images/Imagen_3.jpeg')
-                            .py-1.item-details
-                                h4.text-center.item-price 0$
-                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
-                    .col-12.col-md-6.col-lg-4
-                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
-                            h3.item-title Salsa 4
-                            img.item-image(src='/assets/images/Imagen_4.jpeg')
-                            .py-1.item-details
-                                h4.text-center.item-price 0$
-                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
-                    .col-12.col-md-6.col-lg-4
-                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
-                            h3.item-title Salsa 5
-                            img.item-image(src='/assets/images/Imagen_5.jpeg')
-                            .py-1.item-details
-                                h4.text-center.item-price 0$
-                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
-                    .col-12.col-md-6.col-lg-4
-                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
-                            h3.item-title Salsa 6
-                            img.item-image(src='/assets/images/Imagen_6.jpeg')
-                            .py-1.item-details
-                                h4.text-center.item-price 0$
-                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
-                    .col-12.col-md-6.col-lg-4
-                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
-                            h3.item-title Salsa 7
-                            img.item-image(src='/assets/images/Imagen_7.jpeg')
-                            .py-1.item-details
-                                h4.text-center.item-price 0$
-                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
-                    .col-12.col-md-6.col-lg-4
-                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
-                            h3.item-title Salsa 8
-                            img.item-image(src='/assets/images/Imagen_8.jpeg')
-                            .py-1.item-details
-                                h4.text-center.item-price 0$
-                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
-                    .col-12.col-md-6.col-lg-4
-                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
-                            h3.item-title Salsa 9
-                            img.item-image(src='/assets/images/Imagen_9.jpeg')
-                            .py-1.item-details
-                                h4.text-center.item-price 0$
-                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
-                    .col-12.col-md-6.col-lg-4
-                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
-                            h3.item-title Salsa 10
-                            img.item-image(src='/assets/images/Imagen_10.jpeg')
-                            .py-1.item-details
-                                h4.text-center.item-price 0$
-                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
-                    .col-12.col-md-6.col-lg-4
-                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
-                            h3.item-title Salsa 11
-                            img.item-image(src='/assets/images/Imagen_11.jpeg')
-                            .py-1.item-details
-                                h4.text-center.item-price 0$
-                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
-                    .col-12.col-md-6.col-lg-4
-                        .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
-                            h3.item-title Salsa secreta
-                            img.item-image(src='/assets/images/secreta.png')
-                            .py-1.item-details
-                                h4.text-center.item-price 0$
-                                button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
+                    each sauce in sauces
+                        .col-12.col-md-6.col-lg-4
+                            .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
+                                h3.item-title= sauce.name_S
+                                img.item-image(src=`${sauce.image_S}`)
+                                .py-1.item-details
+                                    h4.text-center.item-price $#{sauce.price_S}
+                                    if sauce.existence_S > 0
+                                        button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
+                                    else
+                                        button.item-button.btn.btn-primary.addToCart(disabled=true) NO DISPONIBLE
     section.shopping-cart
         .container
             h1.text-center CARRITO
