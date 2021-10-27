@@ -106,7 +106,7 @@ footer {
 
 .contenedor {
   border-radius: 25px;
-  background: rgba(0, 0, 0, .03);
+  background: rgba(0, 0, 0, .09);
   max-width: 650px;
   margin: auto;
   padding: 5px 35px;
