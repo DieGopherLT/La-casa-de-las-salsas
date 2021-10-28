@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const flash = require('connect-flash');
+
 const db = require('./db');
 require('../models/Customer.models');
 require('../models/Employee.models');
@@ -36,6 +38,13 @@ class Server {
         this.app.use(express.urlencoded({ extended: true }));
         this.app.use(express.json());
         this.app.use(express.static('public'));
+
+        this.app.use(flash());
+        this.app.use((req, res, next) => {
+            res.locals.error = req.flash('error');
+            res.locals.success = req.flash('success');
+            next();
+        });
     }
 
     routes() {
