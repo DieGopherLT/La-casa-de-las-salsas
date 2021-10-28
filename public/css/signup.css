@@ -1,0 +1,25 @@
+.from_title {
+    color:white;
+}
+
+.form-container {
+    width: 90%;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, .09);
+    border-radius: 25px;
+    padding: 5px 35px;
+}
+
+@media(min-width: 768px) {
+    .form-container {
+        width: 100%;
+        max-width: 650px;
+    }
+}
+
+.btn-submit {
+    align-items: center;
+    width: 100%;
+    margin: 15px 0;
+    background-color: #343a40;
+}

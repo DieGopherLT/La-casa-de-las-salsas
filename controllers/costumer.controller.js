@@ -1,8 +1,8 @@
 const CostumerRepo = require('../repository/Customer.repo');
 
 exports.createCustomer = async (req, res) => {
+    const { name, username, address, phone, password } = req.body;
     try {
-        const { name, username, address, phone, password } = req.body;
         const incomingCostumer = {
             name_C: name,
             username_C: username,
@@ -16,8 +16,12 @@ exports.createCustomer = async (req, res) => {
         })
     } catch(e) {
         console.log(e);
-        res.status(500).json({
-            msg: 'Algo salió mal, por favor, vuelve a intentarlo.'
+        res.render('signup', {
+            name,
+            username,
+            address,
+            phone,
+            password
         })
     }
 }

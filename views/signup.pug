@@ -1,0 +1,59 @@
+extends layouts/base
+
+block styles
+    link(rel='stylesheet' href='/css/signup.css')
+
+block content
+    main.flex-grow-1
+        header.mt-2
+            .container
+                h1.text-center Registro
+                hr
+        .form-container
+            form.needs-validation(action='/api/customer' novalidate='' method='POST')
+                label.form_label(for='username') Usuario:
+                input#username.form-control(type='text' placeholder='Nombre de usuario' name='username' required='' value= user)
+                .valid-feedback Valid.
+                .invalid-feedback Por favor llene el campo de &quot;E-mail&quot;.
+
+                label.form_label(for='name') Nombre:
+                input#name.form-control(type='text' placeholder='Tu nombre' name='name' required='' value= name)
+                .valid-feedback Valid.
+                .invalid-feedback Por favor llene el campo de &quot;Nombre&quot;.
+
+                label.form_label(for='phone') Telefono:
+                input#phone.form-control(type='text' placeholder='Telefono' name='phone' required='' value= phone)
+                .valid-feedback Valid.
+                .invalid-feedback Por favor llene el campo de &quot;Tel&eacute;fono&quot;.
+
+                label.form_label(for='address') Direcci&oacute;n:
+                input#address.form-control(type='text' placeholder='Dirección' name='address' required='' value= address)
+                .valid-feedback Valid.
+                .invalid-feedback Por favor llene el campo de &quot;Direcci&oacute;n&quot;.
+
+                label.form_label(for='password') Contrase&ntilde;a:
+                input#password.form-control(type='password' placeholder='Contraseña' name='password' required='' value= password)
+                .valid-feedback Valid.
+                .invalid-feedback Por favor llene el campo de &quot;Contrase&ntilde;a&quot;.
+
+                button.btn.btn-primary.btn-submit(type='submit') Registrarme
+block scripts
+    script.
+        // Disable form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Get the forms we want to add validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if(form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();

@@ -15,6 +15,10 @@ exports.menuPage = async (req, res) => {
     });
 }
 
+exports.signUp = (req, res) => {
+    res.render('signup');
+}
+
 exports.notFoundPage = (req, res) => {
     res.render('notFound');
 }
