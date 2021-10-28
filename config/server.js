@@ -16,9 +16,6 @@ class Server {
 
     constructor() {
         this.app = express();
-        this.apiRoutes = {
-            customer: '/api/customer'
-        }
 
         this.middlewares();
         this.routes();
@@ -55,7 +52,7 @@ class Server {
     }
 
     routes() {
-        this.app.use(this.apiRoutes.customer, require('../routes/costumer.route'));
+        this.app.use('/', require('../routes/costumer.route'));
         // This one has to be the last one to make the 404 page to work
         this.app.use('/', require('../routes/pages.route'));
     }
