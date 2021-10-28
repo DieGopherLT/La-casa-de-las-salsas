@@ -15,7 +15,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
-    "mysql2": "^2.3.2",
+    "mysql2": "^2.2.5",
     "pug": "^3.0.2",
     "sequelize": "^6.5.0"
   },
