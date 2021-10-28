@@ -1,20 +1,22 @@
 extends layouts/base
 
 block styles
-    link(rel='stylesheet' href='/css/signup.css')
+    link(rel='stylesheet' href='/css/forms.css')
 
 block content
     main.flex-grow-1
         header.mt-2
             .container
                 h1.text-center Registro
-                hr
+                if errors.length > 0
+                    each error in errors
+                        .alert.alert-danger.text-center #{error}
         .form-container
             form.needs-validation(action='/crear-cuenta' novalidate='' method='POST')
                 label.form_label(for='username') Usuario:
                 input#username.form-control(type='text' placeholder='Nombre de usuario' name='username' required='' value= username)
                 .valid-feedback Valid.
-                .invalid-feedback Por favor llene el campo de &quot;E-mail&quot;.
+                .invalid-feedback Por favor llene el campo de Usuario.
 
                 label.form_label(for='name') Nombre:
                 input#name.form-control(type='text' placeholder='Tu nombre' name='name' required='' value= name)
@@ -57,3 +59,4 @@ block scripts
                 });
             }, false);
         })();
+    script(src="/js/deleteAlerts.js")

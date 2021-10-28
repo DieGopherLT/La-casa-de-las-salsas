@@ -11,17 +11,19 @@ exports.createCustomer = async (req, res) => {
             password_C: password
         }
         await CostumerRepo.createCustomer(incomingCostumer);
-        res.status(201).json({
-            msg: `Tu cuenta ha sido creada, puedes iniciar sesión.`,
+        req.flash('success', 'Tu cuenta ha sido creada, inicia sesión');
+        res.render('login', {
+            message: req.flash('success')
         })
     } catch(e) {
-        console.log(e);
+        req.flash('error', e.errors.map(error => error.message));
         res.render('signup', {
             name,
             username,
             address,
             phone,
-            password
+            password,
+            errors: req.flash('error')
         })
     }
 }

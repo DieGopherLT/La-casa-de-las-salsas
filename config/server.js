@@ -52,7 +52,7 @@ class Server {
     }
 
     routes() {
-        this.app.use('/', require('../routes/costumer.route'));
+        this.app.use('/', require('../routes/customer.route'));
         // This one has to be the last one to make the 404 page to work
         this.app.use('/', require('../routes/pages.route'));
     }

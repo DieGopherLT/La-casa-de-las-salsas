@@ -1,9 +1,9 @@
 const { DataTypes } = require('sequelize');
-const bycrpyt = require('bcrypt');
+const bcrpyt = require('bcrypt');
 
 const db = require('../config/db');
 
-const Customer = db.define('customer',{
+const Customer = db.define('customer', {
     id_C: {
         type: DataTypes.INTEGER({length:10}),
         primaryKey: true,
@@ -16,7 +16,9 @@ const Customer = db.define('customer',{
     username_C: {
         type: DataTypes.STRING(30),
         allowNull: false,
-        unique: true
+        unique: {
+            msg: "Ese usuario ya existe"
+        }
     },
     address_C: {
         type: DataTypes.STRING(50),
@@ -34,7 +36,7 @@ const Customer = db.define('customer',{
     timestamps: false,
     hooks: {
         beforeCreate(user) {
-            user.password_C = bycrpyt.hashSync(user.password_C, bycrpyt.genSaltSync(10));
+            user.password_C = bcrpyt.hashSync(user.password_C, bcrpyt.genSaltSync(10));
         }
     }
 });

@@ -8,6 +8,7 @@ router.get('/', pageController.homePage);
 router.get('/nosotros', pageController.aboutPage);
 router.get('/menu', pageController.menuPage);
 router.get('/crear-cuenta', pageController.signUp);
+router.get('/iniciar-sesion', pageController.logIn);
 
 // This has always to be the last one
 router.get('*', pageController.notFoundPage);
