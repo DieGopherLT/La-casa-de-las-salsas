@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const session = require('express-session');
 const flash = require('connect-flash');
 
 const db = require('./db');
@@ -38,6 +39,12 @@ class Server {
         this.app.use(express.urlencoded({ extended: true }));
         this.app.use(express.json());
         this.app.use(express.static('public'));
+
+        this.app.use(session({
+            secret: process.env.SECRET,
+            resave: false,
+            saveUninitialized: false,
+        }));
 
         this.app.use(flash());
         this.app.use((req, res, next) => {
