@@ -8,6 +8,14 @@ exports.OneCustomer = async (id) =>{
     return await Customer.findByPk(id);
 }
 
+exports.customerByUsername= async (username) => {
+    return await Customer.findOne({
+        where: {
+            username_C: username
+        }
+    })
+}
+
 exports.createCustomer = async (customer) => {
     return await Customer.create(customer);
 }

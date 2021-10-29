@@ -41,4 +41,8 @@ const Customer = db.define('customer', {
     }
 });
 
+Customer.prototype.verifyPassword = function(password) {
+    return bcrpyt.compareSync(password, this.password_C);
+}
+
 module.exports = Customer;

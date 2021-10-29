@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const flash = require('connect-flash');
+const passport = require('./passport');
 
 const db = require('./db');
 require('../models/Customer.models');
@@ -49,6 +50,9 @@ class Server {
             res.locals.success = req.flash('success');
             next();
         });
+
+        this.app.use(passport.initialize());
+        this.app.use(passport.session());
     }
 
     routes() {
