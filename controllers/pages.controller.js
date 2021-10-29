@@ -15,6 +15,18 @@ exports.menuPage = async (req, res) => {
     });
 }
 
+exports.signUp = (req, res) => {
+    res.render('signup', {
+        errors: []
+    });
+}
+
+exports.logIn = (req, res) => {
+    res.render('login', {
+        message: []
+    });
+}
+
 exports.notFoundPage = (req, res) => {
     res.render('notFound');
 }

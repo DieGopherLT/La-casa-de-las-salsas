@@ -1,5 +1,8 @@
 const express = require('express');
 const path = require('path');
+const session = require('express-session');
+const flash = require('connect-flash');
+
 const db = require('./db');
 require('../models/Customer.models');
 require('../models/Employee.models');
@@ -13,9 +16,6 @@ class Server {
 
     constructor() {
         this.app = express();
-        this.apiRoutes = {
-            customer: '/api/customer'
-        }
 
         this.middlewares();
         this.routes();
@@ -36,10 +36,23 @@ class Server {
         this.app.use(express.urlencoded({ extended: true }));
         this.app.use(express.json());
         this.app.use(express.static('public'));
+
+        this.app.use(session({
+            secret: process.env.SECRET,
+            resave: false,
+            saveUninitialized: false,
+        }));
+
+        this.app.use(flash());
+        this.app.use((req, res, next) => {
+            res.locals.error = req.flash('error');
+            res.locals.success = req.flash('success');
+            next();
+        });
     }
 
     routes() {
-        this.app.use(this.apiRoutes.customer, require('../routes/costumer.route'));
+        this.app.use('/', require('../routes/customer.route'));
         // This one has to be the last one to make the 404 page to work
         this.app.use('/', require('../routes/pages.route'));
     }
