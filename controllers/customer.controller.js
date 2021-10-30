@@ -11,10 +11,8 @@ exports.createCustomer = async (req, res) => {
             password_C: password
         }
         await CostumerRepo.createCustomer(incomingCostumer);
-        req.flash('success', 'Tu cuenta ha sido creada, inicia sesión');
-        res.render('login', {
-            message: req.flash('success')
-        })
+        req.session.successMessage = 'Tu cuenta ha sido creada, inicia sesión.';
+        res.redirect('/iniciar-sesion');
     } catch(e) {
         req.flash('error', e.errors.map(error => error.message));
         res.render('signup', {

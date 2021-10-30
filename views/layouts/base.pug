@@ -19,15 +19,22 @@ html(lang="en")
                     ul.mt-3.mr-auto.mt-lg-0.navbar-nav.w-100
                         .flex-row.d-flex.flex-column.flex-lg-row.justify-content-between.w-100
                             .d-flex.flex-column.flex-lg-row
-                                li.navbar-item.active
-                                    a.nav-link(href='/menu') Menú
+                                if isAuthenticated
+                                    li.navbar-item.active
+                                        a.nav-link(href='/menu') Menú
                                 li.navbar-item.active
                                     a.nav-link(href='/nosotros') Sobre nosotros
                             .d-flex.flex-column.flex-lg-row
-                                li.navbar-item.active
-                                    a.nav-link(href='/crear-cuenta') Crear cuenta
-                                li.navbar-item.active
-                                    a.nav-link(href='/iniciar-sesion') Iniciar sesión
+                                if !isAuthenticated
+                                    li.navbar-item.active
+                                        a.nav-link(href='/crear-cuenta') Crear cuenta
+                                    li.navbar-item.active
+                                        a.nav-link(href='/iniciar-sesion') Iniciar sesión
+                                else
+                                    li.navbar-item.active
+                                        p.nav-link Hola #{user.name_C}
+                                    li.navbar-item.active
+                                        a.nav-link(href='/cerrar-sesion') Cerrar sesión
         block content
 
         footer.p-3.bg-dark
