@@ -8,17 +8,20 @@ block content
         header
             .container
                 h1.text-center Iniciar sesión
-                if message.length > 0
+                if message && message.length > 0
                     .alert.alert-success.text-center #{message}
+                if error && error.length > 0
+                    each err in error
+                        .alert.alert-danger.text-center #{err}
         .form-container
             form.needs-validation(action='/iniciar-sesion' novalidate='' method='POST')
                 label.form_label(for='name') Nombre:
-                input#name.form-control(type='text' placeholder='Nombre' name='username' required='')
+                input#name.form-control(type='text' placeholder='Nombre' name='username' required='' value= username)
                 .valid-feedback Valid.
                 .invalid-feedback Por favor llene el campo de &quot;Nombre&quot;
 
                 label.form_label(for='pass') Contrase&ntilde;a:
-                input#pass.form-control(type='password' placeholder='Contraseña' name='password' required='')
+                input#pass.form-control(type='password' placeholder='Contraseña' name='password' required='' value= password)
                 .valid-feedback Valid.
                 .invalid-feedback Por favor llene el campo de &quot;Contrase&ntilde;a&quot;
                 button.btn.btn-primary.btn-submit(type='submit') Iniciar Sesión
