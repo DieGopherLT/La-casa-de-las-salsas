@@ -23,7 +23,7 @@ exports.signUp = (req, res) => {
 
 exports.logIn = (req, res) => {
     res.render('login', {
-        message: req.session.successMessage
+        message: req.session.successMessage || ''
     });
 }
 

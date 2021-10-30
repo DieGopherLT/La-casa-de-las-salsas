@@ -40,23 +40,27 @@ class Server {
 
         this.app.use(session({
             secret: process.env.SECRET,
-            resave: false,
-            saveUninitialized: false,
+            resave: true,
+            saveUninitialized: true,
         }));
 
         this.app.use(flash());
-        this.app.use((req, res, next) => {
-            res.locals.error = req.flash('error');
-            res.locals.success = req.flash('success');
-            next();
-        });
 
         this.app.use(passport.initialize());
         this.app.use(passport.session());
+
+        this.app.use((req, res, next) => {
+            res.locals.error = req.flash('error');
+            res.locals.success = req.flash('success');
+            res.locals.isAuthenticated = req.isAuthenticated()
+            res.locals.user = { ...req.user } || null
+            next();
+        });
     }
 
     routes() {
         this.app.use('/', require('../routes/customer.route'));
+        this.app.use('/', require('../routes/auth.route'));
         // This one has to be the last one to make the 404 page to work
         this.app.use('/', require('../routes/pages.route'));
     }
