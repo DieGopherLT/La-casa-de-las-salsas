@@ -22,8 +22,19 @@ exports.signUp = (req, res) => {
 }
 
 exports.logIn = (req, res) => {
+    const message = req.flash('success');
+    const error = req.flash('error');
+    const loginData = req.session.login;
+
+    const username = loginData ? loginData.username : '';
+    const password = loginData ? loginData.password : '';
+
+    req.session.login = null;
     res.render('login', {
-        message: req.session.successMessage || ''
+        message,
+        error,
+        username,
+        password
     });
 }
 

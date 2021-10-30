@@ -50,8 +50,6 @@ class Server {
         this.app.use(passport.session());
 
         this.app.use((req, res, next) => {
-            res.locals.error = req.flash('error');
-            res.locals.success = req.flash('success');
             res.locals.isAuthenticated = req.isAuthenticated()
             res.locals.user = { ...req.user } || null
             next();
