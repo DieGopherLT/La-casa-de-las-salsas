@@ -6,7 +6,7 @@ const passport = require('./passport');
 
 const db = require('./db');
 require('../models/Customer.models');
-require('../models/Employee.models');
+require('../models/User.models');
 require('../models/Saucer.models');
 require('../models/Sauces.models');
 require('../models/Order.models');
