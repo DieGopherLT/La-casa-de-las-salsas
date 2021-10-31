@@ -1,4 +1,6 @@
 const { DataTypes } = require('sequelize');
+const bcrpyt = require('bcrypt');
+
 const db = require('../config/db');
 
 const User = db.define('User', {
@@ -36,4 +38,15 @@ const User = db.define('User', {
     }
 }, {
     timestamps: false,
+    hooks: {
+        beforeCreate(user) {
+            user.password = bcrpyt.hashSync(user.password, bcrpyt.genSaltSync(10));
+        }
+    }
 });
+
+Customer.prototype.verifyPassword = function(password) {
+    return bcrpyt.compareSync(password, this.password);
+}
+
+module.exports = User;
