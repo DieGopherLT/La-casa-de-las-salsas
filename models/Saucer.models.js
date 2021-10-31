@@ -2,12 +2,12 @@ const { DataTypes } = require('sequelize');
 const db = require('../config/db');
 
 const Saucer = db.define('saucer', {
-    code_S:{
+    code:{
         type: DataTypes.INTEGER({length:10}),
         primaryKey: true,
         autoIncrement: true
     },
-    name_S: {
+    name: {
         type: DataTypes.STRING(30),
         allowNull: false
     },
@@ -15,15 +15,15 @@ const Saucer = db.define('saucer', {
     //     type: DataTypes.STRING(500),
     //     allowNull: false
     // },
-    existence_S: {
+    existence: {
         type: DataTypes.INTEGER({length:2}),
         allowNull: false,
     },
-    price_S: {
+    price: {
         type: DataTypes.DECIMAL(4,2),
         allowNull: false
     },
-    image_S: {
+    imagePath: {
         type: DataTypes.STRING(100),
         allowNull: false
     }
