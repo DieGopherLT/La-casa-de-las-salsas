@@ -1,34 +1,38 @@
 const Saucer = require('../models/Saucer.models');
 
-exports.allSaucers = async () => {
+exports.getAllSaucers = async () => {
     return await Saucer.findAll();
-}
+};
 
-exports.OneSaucer = async (id) => {
+exports.getSaucerByID = async id => {
     return await Saucer.findByPk(id);
-}
+};
 
-exports.createSaucer = async(saucer) => {
-    return await Saucer.create(saucer);
-}
+exports.createSaucer = async saucer => {
+    return Saucer.create(saucer);
+};
 
-exports.UpdateSaucer = async (id, Usaucer) => {
+exports.updateSaucer = async (id, updatedSaucer) => {
     const saucer = await Saucer.findByPk(id);
 
-    saucer.name_S = Usaucer.name_S;
-    saucer.description_S
-}
+    saucer.name = updatedSaucer.name;
+    saucer.description = updatedSaucer.description;
 
-exports.MoreExistence = async (id, Num) => {
+    await saucer.save();
+};
+
+exports.increaseExistence = async (id, num) => {
     const ext = await Saucer.findByPk(id);
 
-    ext.existence_S = ext.existence_S + Num;
-}
+    ext.existence = ext.existence + num;
 
-exports.deleteSauce = async (id) => {
+    await ext.save();
+};
+
+exports.deleteSauce = async code => {
     return await Saucer.destroy({
         where: {
-            code_S: id
-        }
+            code
+        },
     });
-}
+};

@@ -1,34 +1,38 @@
 const Sauces = require('../models/Sauces.models');
 
-exports.allSauces = async () => {
+exports.getAllSauces = async () => {
     return await Sauces.findAll();
-}
+};
 
-exports.OneSauces = async (id) => {
+exports.getSauceById = async id => {
     return await Sauces.findByPk(id);
-}
+};
 
-exports.createSauces = async(sauces) => {
-    return await Sauces.create(sauces);
-}
+exports.createSauce = async sauce => {
+    return Sauces.create(sauce);
+};
 
-exports.UpdateSauces = async (id, Usauces) => {
-    const sauces = await Sauces.findByPk(id);
+exports.updateSauce = async (id, updatedSauce) => {
+    const sauce = await Sauces.findByPk(id);
 
-    sauces.name_SL = Usauces.name_SL;
-    sauces.description_S
-}
+    sauce.name = updatedSauce.name;
+    sauce.description = updatedSauce.description;
 
-exports.MoreExistence = async (id, Num) => {
+    await sauce.save();
+};
+
+exports.increaseExistence = async (id, amount) => {
     const ext = await Sauces.findByPk(id);
 
-    ext.existence_SL = ext.existence_SL + Num;
-}
+    ext.existence = ext.existence + amount;
 
-exports.deleteSauce = async (id) => {
+    await ext.save();
+};
+
+exports.deleteSauce = async code => {
     return await Sauces.destroy({
         where: {
-            code_SL: id
-        }
+            code
+        },
     });
-}
+};
