@@ -2,20 +2,20 @@ const { DataTypes } = require('sequelize');
 const db = require('../config/db');
 
 const User = db.define('User', {
-    UserID: {
+    userID: {
         type: DataTypes.INTEGER({length:10}),
         primaryKey: true,
         autoIncrement: true,
     },
-    Name_User: {
+    name_User: {
         type: DataTypes.STRING(30),
         allowNull: false
     },
-    Address_User: {
+    address_User: {
         type: DataTypes.STRING(50),
         allowNull: false
     },
-    User_Phone: {
+    user_Phone: {
         type: DataTypes.STRING(10),
         allowNull: false
     },
@@ -23,14 +23,14 @@ const User = db.define('User', {
         type: DataTypes.INTEGER({length:5}),
         allowNull: false
     },
-    Username: {
+    username: {
         type: DataTypes.STRING(30),
         allowNull: false,
         unique: {
             msg: "Ese usuario ya existe"
         }
     },
-    Password: {
+    password: {
         type: DataTypes.STRING(60),
         allowNull: false
     }

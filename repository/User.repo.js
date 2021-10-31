@@ -7,7 +7,7 @@ exports.SerchAllUser = async () => {
 exports.UserFindOne = async (username) => {
     return await User.findOne({
         where: {
-            Username: username
+            username: username
         }
     })
 }
@@ -19,13 +19,13 @@ exports.CreateUser = async (NewUser) => {
 exports.UpdateUser = async (username,NewUser) => {
     const Use = await User.findOne({
         where: {
-            username_C: username
+            username: username
         }
     })
 
-    Use.Name_User = NewUser.Name_User;
-    Use.Address_User = NewUser.Address_User;
-    Use.User_Phone = NewUser.User_Phone;
+    Use.name_User = NewUser.name_User;
+    Use.address_User = NewUser.address_User;
+    Use.user_Phone = NewUser.user_Phone;
 
     await Use.save();
 }
@@ -33,7 +33,7 @@ exports.UpdateUser = async (username,NewUser) => {
 exports.DeleteUser = async (username) => {
     return await Use.destroy({
         where: {
-            Username: username
+            username: username
         }
     })
 }
