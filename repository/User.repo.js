@@ -1,6 +1,6 @@
 const User = require('../models/User.models');
 
-exports.SerchAllUser = async () => {
+exports.SearchAllUser = async () => {
     return await User.findAll();
 }
 
@@ -8,6 +8,14 @@ exports.UserFindOne = async (username) => {
     return await User.findOne({
         where: {
             username: username
+        }
+    })
+}
+
+exports.userByUsername = async username => {
+    return await User.findOne({
+        where: {
+            username
         }
     })
 }

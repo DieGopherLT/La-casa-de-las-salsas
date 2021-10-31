@@ -1,16 +1,16 @@
-const CostumerRepo = require('../repository/Customer.repo');
+const UserRepo = require('../repository/User.repo');
 
 exports.createCustomer = async (req, res) => {
     const { name, username, address, phone, password } = req.body;
     try {
         const incomingCostumer = {
-            name_C: name,
-            username_C: username,
-            address_C: address,
-            numberPhone_C: phone,
-            password_C: password
+            name,
+            username,
+            address,
+            phone,
+            password
         }
-        await CostumerRepo.createCustomer(incomingCostumer);
+        await UserRepo.CreateUser(incomingCostumer);
         req.flash('success', 'Tu cuenta ha sido creada, inicia sesión.');
         res.redirect('/iniciar-sesion');
     } catch(e) {
