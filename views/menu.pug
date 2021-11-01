@@ -26,11 +26,11 @@ block content
                     each sauce in sauces
                         .col-12.col-md-6.col-lg-4
                             .p-2.mb-4.shadow.item.d-flex.flex-column.align-items-center
-                                h3.item-title= sauce.name_S
-                                img.item-image(src=`${sauce.image_S}`)
+                                h3.item-title= sauce.name
+                                img.item-image(src=`${sauce.imagePath}`)
                                 .py-1.item-details
-                                    h4.text-center.item-price $#{sauce.price_S}
-                                    if sauce.existence_S > 0
+                                    h4.text-center.item-price $#{sauce.price}
+                                    if sauce.existence > 0
                                         button.item-button.btn.btn-primary.addToCart AÑADIR AL CARRITO
                                     else
                                         button.item-button.btn.btn-primary.addToCart(disabled=true) NO DISPONIBLE
