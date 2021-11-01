@@ -1,4 +1,4 @@
-const Saucer = require('../models/Saucer.models');
+const SaucerRepo = require('../repository/Saucer.repo');
 
 exports.homePage = (req, res) => {
     res.render('home');
@@ -9,7 +9,7 @@ exports.aboutPage = (req, res) => {
 }
 
 exports.menuPage = async (req, res) => {
-    const sauces = await Saucer.findAll();
+    const sauces = await SaucerRepo.getAllSaucers();
     res.render('menu', {
         sauces
     });

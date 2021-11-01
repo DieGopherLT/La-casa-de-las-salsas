@@ -4,26 +4,27 @@ const bcrpyt = require('bcrypt');
 const db = require('../config/db');
 
 const User = db.define('User', {
-    userID: {
+    id: {
         type: DataTypes.INTEGER({length:10}),
         primaryKey: true,
         autoIncrement: true,
     },
-    name_User: {
+    name: {
         type: DataTypes.STRING(30),
         allowNull: false
     },
-    address_User: {
+    address: {
         type: DataTypes.STRING(50),
         allowNull: false
     },
-    user_Phone: {
+    phone: {
         type: DataTypes.STRING(10),
         allowNull: false
     },
-    type_User: {
+    userLevel: {
         type: DataTypes.INTEGER({length:5}),
-        allowNull: false
+        allowNull: false,
+        defaultValue: 1
     },
     username: {
         type: DataTypes.STRING(30),
@@ -45,7 +46,7 @@ const User = db.define('User', {
     }
 });
 
-Customer.prototype.verifyPassword = function(password) {
+User.prototype.verifyPassword = function(password) {
     return bcrpyt.compareSync(password, this.password);
 }
 
