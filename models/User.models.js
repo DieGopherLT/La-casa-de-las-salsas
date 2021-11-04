@@ -19,7 +19,16 @@ const User = db.define('User', {
     },
     phone: {
         type: DataTypes.STRING(10),
-        allowNull: false
+        allowNull: false,
+        validate: {
+            len: {
+                args: [10, 10],
+                msg: 'La longitud del numero de teléfono no es correcta'
+            },
+            isNumeric: {
+                msg: 'Ingrese un numero de teléfono válido'
+            }
+        }
     },
     userLevel: {
         type: DataTypes.INTEGER({length:5}),
@@ -30,12 +39,24 @@ const User = db.define('User', {
         type: DataTypes.STRING(30),
         allowNull: false,
         unique: {
-            msg: "Ese usuario ya existe"
+            msg: 'Ese usuario ya existe'
+        },
+        validate: {
+            notContains: {
+                args: ' ',
+                msg: 'No se permiten espacios en el nombre de usuario'
+            }
         }
     },
     password: {
         type: DataTypes.STRING(60),
-        allowNull: false
+        allowNull: false,
+        validate: {
+            len: {
+                args: [6, 18],
+                msg: 'Por favor, ingrese una contraseña de entre 6 y 18 caracteres'
+            },
+        }
     }
 }, {
     timestamps: false,

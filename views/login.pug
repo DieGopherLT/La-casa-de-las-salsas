@@ -13,6 +13,9 @@ block content
                 if error && error.length > 0
                     each err in error
                         .alert.alert-danger.text-center #{err}
+                if warning && warning.length > 0
+                    each warn in warning
+                        .alert.alert-warning.text-center #{warn}
         .form-container
             form.needs-validation(action='/iniciar-sesion' novalidate='' method='POST')
                 label.form_label(for='name') Nombre:
