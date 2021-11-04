@@ -7,5 +7,21 @@ exports.authenticateUser = passport.authenticate('local', {
 });
 
 exports.logOut = (req, res) => {
-    req.session.destroy(() => res.redirect('/iniciar-sesion'));
+    req.session.destroy();
+    res.redirect('/iniciar-sesion');
 };
+
+exports.noCache = (req, res, next) => {
+    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+    res.header('Expires', '-1');
+    res.header('Pragma', 'no-cache');
+    return next();
+}
+
+exports.checkAuthentication = (req, res, next) => {
+    if(req.isAuthenticated()) {
+        return next();
+    }
+    req.flash('warning', 'Inicia sesión, por favor.');
+    res.redirect('/iniciar-sesion');
+}

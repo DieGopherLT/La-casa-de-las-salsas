@@ -24,6 +24,7 @@ exports.signUp = (req, res) => {
 exports.logIn = (req, res) => {
     const message = req.flash('success');
     const error = req.flash('error');
+    const warning = req.flash('warning');
     const loginData = req.session.login;
 
     const username = loginData ? loginData.username : '';
@@ -32,6 +33,7 @@ exports.logIn = (req, res) => {
     req.session.login = null;
     res.render('login', {
         message,
+        warning,
         error,
         username,
         password
