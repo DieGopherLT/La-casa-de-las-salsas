@@ -1,7 +1,10 @@
 const SaucerRepo = require('../repository/Saucer.repo');
 
 exports.homePage = (req, res) => {
-    res.render('home');
+    const warning = req.flash('warning');
+    res.render('home', {
+        warning
+    });
 }
 
 exports.aboutPage = (req, res) => {

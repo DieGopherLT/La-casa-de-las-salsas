@@ -23,11 +23,13 @@ router.get('/menu',
 
 router.get('/crear-cuenta',
     authController.noCache,
+    authController.redirectToHomeIfAuthenticated,
     pageController.signUp
 );
 
 router.get('/iniciar-sesion',
     authController.noCache,
+    authController.redirectToHomeIfAuthenticated,
     pageController.logIn
 );
 

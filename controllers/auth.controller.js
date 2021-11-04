@@ -25,3 +25,11 @@ exports.checkAuthentication = (req, res, next) => {
     req.flash('warning', 'Inicia sesión, por favor.');
     res.redirect('/iniciar-sesion');
 }
+
+exports.redirectToHomeIfAuthenticated = (req, res, next) => {
+    if(req.isAuthenticated()) {
+        req.flash('warning', 'Ya iniciaste sesión, si deseas crear o iniciar sesión con otra cuenta, cierra sesión primero.');
+        return res.redirect('/');
+    }
+    return next();
+}
