@@ -6,12 +6,10 @@ const authController = require('../controllers/auth.controller');
 const router = express.Router();
 
 router.get('/',
-    authController.noCache,
     pageController.homePage
 );
 
 router.get('/nosotros',
-    authController.noCache,
     pageController.aboutPage
 );
 
