@@ -118,3 +118,46 @@ footer {
   margin: 15px 0px;
   background-color: #343a40;
 }
+
+
+.file-select {
+  position: relative;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center; 
+}
+
+.file-select::before {
+  width: 50%;
+  background-color: #343a40;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  content: 'Seleccionar'; /* testo por defecto */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+
+.file-select input[type="file"] {
+  opacity: 0;
+  width: 200px;
+  height: 32px;
+  display: inline-block;
+}
+
+#src-file1::before {
+  content: 'Seleccionar imagen';
+}
+
+.centrando{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

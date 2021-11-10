@@ -59,16 +59,102 @@
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Por favor llene el campo de "Producto"</div>
             
-            
+                <label for="Product" class="form_label">Tipo de elemento:</label>
                 <div class="form-floating">
                     <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
                         <option selected>Tipo de elemento</option>
                         <option value="1">Salsa</option>
                         <option value="2">Platillo</option>
-\                    </select>
+                    </select>
                 </div>
 
+                <label for="Price" class="form_label">Precio del producto:</label>
+            <input type="text" class="form-control" id="Price" placeholder="Precio" name="Price" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Por favor llene el campo de "Precio"</div>
+
+                <label for="tentacles">Cantidad:</label>
+                <div>
+                    <input type="number" id="tentacles" name="tentacles"min="0" max="100" required>
+                </div>
+
+                <label for="pass" class="form_label">Imagen del producto:</label>
+                <div><h1></h1></div>
+                <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+                <div class="file-select" id="src-file1" >
+                    <input type="file" class="form-control" name="imagen" id="imagen" maxlength="256" placeholder="Imagen">
+                    <input type="hidden" class="form-control" name="imagenactual" id="imagenactual">
+                </div>
+                <div class="centrando"><img src="" width="150px" height="120px" id="imagenmuestra"></div>
+                
+
             <button type="submit" class="btn btn-primary btn_submit" >Agregar</button>
+                    
+        </form>  
+        <script>
+          // Disable form submissions if there are invalid fields
+            (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+              // Get the forms we want to add validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+              // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    }
+                form.classList.add('was-validated');
+                }, false);
+                });
+                }, false);
+            })();
+        </script>
+    </div>
+    <div class="contenedor">
+        <h3 class="text-center">Modificar producto</h3>
+        <form action="/action_page.php" class="needs-validation" novalidate method="GET">
+            
+            <label for="Product" class="form_label">Producto:</label>
+                <div class="form-floating">
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <option selected>Producto a editar</option>
+                        <option value="1">Producto 1</option>
+                        <option value="2">Producto 2</option>
+                    </select>
+                </div>
+            
+                <label for="element" class="form_label">Tipo de elemento:</label>
+                <div class="form-floating">
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <option selected>Tipo de elemento</option>
+                        <option value="1">Salsa</option>
+                        <option value="2">Platillo</option>
+                    </select>
+                </div>
+
+                <label for="Price" class="form_label">Precio del producto:</label>
+            <input type="text" class="form-control" id="Price" placeholder="Precio" name="Price" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Por favor llene el campo de "Precio"</div>
+
+                <label for="tentacles">Cantidad:</label>
+                <div>
+                    <input type="number" id="tentacles" name="tentacles"min="0" max="100" required>
+                </div>
+
+                <label for="pass" class="form_label">Imagen del producto:</label>
+                <div><h1></h1></div>
+                <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+                <div class="file-select" id="src-file1" >
+                    <input type="file" class="form-control" name="imagen" id="imagen" maxlength="256" placeholder="Imagen">
+                    <input type="hidden" class="form-control" name="imagenactual" id="imagenactual">
+                </div>
+                <div class="centrando"><img src="" width="150px" height="120px" id="imagenmuestra"></div>
+                
+
+            <button type="submit" class="btn btn-primary btn_submit" >Actualizar</button>
                     
         </form>  
         <script>
@@ -103,22 +189,16 @@
                 <div class="invalid-feedback">Por favor llene el campo de "Producto"</div>
             
             
-                <label for="pass" class="form_label">Contraseña:</label>
-                <input type="password" class="form-control" id="pass" placeholder="Contraseña" name="pass" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Por favor llene el campo de "Contraseña"</div>
-
+                
             <button type="submit" class="btn btn-primary btn_submit" >Eliminar</button>
                     
-        </form>  
+        </form> 
         <script>
-          // Disable form submissions if there are invalid fields
+// script para validar campos
             (function() {
             'use strict';
             window.addEventListener('load', function() {
-              // Get the forms we want to add validation styles to
                 var forms = document.getElementsByClassName('needs-validation');
-              // Loop over them and prevent submission
                 var validation = Array.prototype.filter.call(forms, function(form) {
                 form.addEventListener('submit', function(event) {
                     if (form.checkValidity() === false) {
@@ -130,7 +210,26 @@
                 });
                 }, false);
             })();
+//Termina script
         </script>
+
+        <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        // Asignamos el atributo src a la tag de imagen
+                        $('#imagenmuestra').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+                // El listener va asignado al input
+            $("#imagen").change(function() {
+            readURL(this);
+            });
+        </script>
+
     </div>
 </div>
 
