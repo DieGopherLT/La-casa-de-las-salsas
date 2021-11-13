@@ -8,8 +8,9 @@ const db = require('./db');
 require('../models/User.models');
 require('../models/Saucer.models');
 require('../models/Sauces.models');
-require('../models/Order.models');
-require('../models/DetailOrder.models');
+require('../models/NewOrder.models');
+require('../models/받침접시-Order.models');
+require('../models/소스-Order.models');
 
 //Lo hago a modo de clase para que sea más legible.
 class Server {
