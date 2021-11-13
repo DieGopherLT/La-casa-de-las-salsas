@@ -1,5 +1,7 @@
 const { DataTypes } = require('sequelize');
 const db = require('../config/db');
+const Order = require('./NewOrder.models');
+const OrderS = require('./소스-Order.models');
 
 const Sauces = db.define('sauces',{
     code: {
@@ -21,5 +23,7 @@ const Sauces = db.define('sauces',{
 }, {
     timestamps: false
 });
+
+Sauces.belongsToMany(Order, { through: OrderS });
 
 module.exports = Sauces;
