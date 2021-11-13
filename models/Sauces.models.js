@@ -24,6 +24,6 @@ const Sauces = db.define('sauces',{
     timestamps: false
 });
 
-Sauces.belongsToMany(Order, { through: OrderS });
+Sauces.belongsToMany(Order, { through: 'OrderS' });
 
 module.exports = Sauces;

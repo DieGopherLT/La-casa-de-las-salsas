@@ -33,6 +33,6 @@ const Saucer = db.define('saucer', {
     timestamps: false
 });
 
-Saucer.belongsToMany(Order, { through: OrderP });
+Saucer.belongsToMany(Order, { through: 'OrderP' });
 
 module.exports = Saucer;
