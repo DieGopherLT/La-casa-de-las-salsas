@@ -1,8 +1,8 @@
-const { DataTypes, Model } = require('sequelize');
+const { DataTypes } = require('sequelize');
 const db = require('../config/db');
 
 const Sauces = db.define('sauces',{
-    code: {
+    codeS: {
         type: DataTypes.INTEGER({length:10}),
         primaryKey: true,
     },
