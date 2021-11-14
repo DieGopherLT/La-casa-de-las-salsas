@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 const db = require('../config/db');
 
 const Sauces = db.define('sauces',{
-    code: {
+    codeS: {
         type: DataTypes.INTEGER({length:10}),
         primaryKey: true,
     },
@@ -21,5 +21,7 @@ const Sauces = db.define('sauces',{
 }, {
     timestamps: false
 });
+
+
 
 module.exports = Sauces;
