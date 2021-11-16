@@ -1,4 +1,4 @@
-const Order = require('../models/Order.models');
+const Order = require('../models/NewOrder.models');
 
 exports.allOrders = async () => {
     return await Order.findAll();
@@ -15,12 +15,9 @@ exports.createOrder = async (order) => {
 exports.UpdateOrder = async (id, UOrder) => {
     const order = await Order.findByPk(id);
 
-    order.address_O = UOrder.address_O;
-    order.description_O = UOrder.description_O;
-    order.date_O = UOrder.date_O;
-    order.hour_O = UOrder.hour_O;
-    order.quantity_O = UOrder.quantity_O;
-    order.total_O = UOrder.total_O;
+    order.nameC = UOrder.nameC;
+    order.addressC = UOrder.addressC;
+    order.PriceTotal = UOrder.PriceTotal;
 
     await order.save(); 
 }
