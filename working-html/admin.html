@@ -112,6 +112,7 @@
             })();
         </script>
     </div>
+
     <div class="contenedor">
         <h3 class="text-center">Modificar producto</h3>
         <form action="/action_page.php" class="needs-validation" novalidate method="GET">
@@ -229,7 +230,76 @@
             readURL(this);
             });
         </script>
+    </div>
 
+    <div class="contenedor">
+        <h3 class="text-center">Agregar empleado</h3>
+        <form action="/action_page.php" class="needs-validation" novalidate method="GET">
+            
+            <label for="emp" class="form_label">Nombre(s) del empleado:</label>
+            <input type="text" class="form-control" id="emp" placeholder="Nombre(s)" name="emp" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Por favor llene el campo de "Nombre"</div>
+
+                <label for="ape" class="form_label">RFC:</label>
+            <input type="text" class="form-control" id="ape" placeholder="Apellidos" name="ape" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Por favor llene el campo de "Apellidos"</div>
+            
+                <label for="Product" class="form_label">Nivel:</label>
+                <div class="form-floating">
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <option selected>Nivel</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+
+                <label for="rfc" class="form_label">RFC:</label>
+            <input type="text" class="form-control" id="rfc" placeholder="RFC" name="rfc" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Por favor llene el campo de "RFC"</div>
+
+
+                <label for="tentacles">Cantidad:</label>
+                <div>
+                    <input type="number" id="tentacles" name="tentacles"min="0" max="100" required>
+                </div>
+
+                <label for="pass" class="form_label">Foto del empleado:</label>
+                <div><h1></h1></div>
+                <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+                <div class="file-select" id="src-file1" >
+                    <input type="file" class="form-control" name="imagen" id="imagen" maxlength="256" placeholder="Imagen">
+                    <input type="hidden" class="form-control" name="imagenactual" id="imagenactual">
+                </div>
+                <div class="centrando"><img src="" width="150px" height="120px" id="imagenmuestra"></div>
+                
+
+            <button type="submit" class="btn btn-primary btn_submit" >Agregar</button>
+                    
+        </form>  
+        <script>
+          // Disable form submissions if there are invalid fields
+            (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+              // Get the forms we want to add validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+              // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    }
+                form.classList.add('was-validated');
+                }, false);
+                });
+                }, false);
+            })();
+        </script>
     </div>
 </div>
 
