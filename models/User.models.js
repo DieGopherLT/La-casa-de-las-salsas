@@ -30,8 +30,8 @@ const User = db.define('User', {
             }
         }
     },
-    userLevel: {
-        type: DataTypes.INTEGER({length:5}),
+    level: {
+        type: DataTypes.INTEGER({ length: 5 }),
         allowNull: false,
         defaultValue: 1
     },

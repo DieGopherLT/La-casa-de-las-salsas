@@ -4,28 +4,28 @@ exports.allOrders = async () => {
     return await Order.findAll();
 }
 
-exports.OneOrder = async (code) => {
+exports.OneOrder = async code => {
     return await Order.findByPk(code);
 }
 
-exports.createOrder = async (order) => {
-    return await Order.create(order);
+exports.createOrder = async order => {
+    return  Order.create(order);
 }
 
 exports.UpdateOrder = async (id, UOrder) => {
     const order = await Order.findByPk(id);
 
-    order.nameC = UOrder.nameC;
-    order.addressC = UOrder.addressC;
+    order.nameC = UOrder.name;
+    order.addressC = UOrder.address;
     order.PriceTotal = UOrder.PriceTotal;
 
-    await order.save(); 
+    await order.save();
 }
 
-exports.deleteOrder = async (id) => {
+exports.deleteOrder = async code => {
     return await Order.destroy({
         where: {
-            code_O: id
+            code
         }
     });
 }
