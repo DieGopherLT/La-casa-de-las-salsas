@@ -32,7 +32,21 @@ html(lang="en")
                                         a.nav-link(href='/iniciar-sesion') Iniciar sesión
                                 else
                                     li.navbar-item.active
-                                        p.nav-link Hola #{user.name}
+                                        p.nav-link.m-0 Hola #{user.name}
+                                    #navbarNavDarkDropdown.collapse.navbar-collapse
+                                        ul.navbar-nav
+                                            li.nav-item.dropdown
+                                                a#navbarDarkDropdownMenuLink.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                                    | Administrar
+                                                ul.dropdown-menu.dropdown-menu-dark(aria-labelledby='navbarDarkDropdownMenuLink')
+                                                    li
+                                                        a.dropdown-item(href='#') Empleados
+                                                    li
+                                                        a.dropdown-item(href='#') Platillos
+                                                    li
+                                                        a.dropdown-item(href='#') Salsas
+                                                    li
+                                                        a.dropdown-item(href="#") Ordenes
                                     li.navbar-item.active
                                         a.nav-link(href='/cerrar-sesion') Cerrar sesión
         block content
