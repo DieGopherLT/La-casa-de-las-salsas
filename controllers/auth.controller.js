@@ -33,3 +33,21 @@ exports.redirectToHomeIfAuthenticated = (req, res, next) => {
     }
     return next();
 }
+
+exports.checkIfUserIsAdmin = (req, res, next) => {
+    // Any boolean equivalence to first condition will make the app not to work.
+    if (req.user === undefined || req.user.level !== 3) {
+        req.flash('warning', 'No tienes permiso para ver acceder a esta parte.');
+        return res.redirect('/');
+    }
+    return next();
+}
+
+exports.checkIfUserHasAccess = (req, res, next) => {
+    // Any boolean equivalence to first condition will make the app not to work.
+    if (req.user === undefined || req.user.level === 1) {
+        req.flash('warning', 'No tienes permiso para acceder a esta parte');
+        return res.redirect('/');
+    }
+    return next();
+}

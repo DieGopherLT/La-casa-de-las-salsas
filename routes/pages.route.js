@@ -31,6 +31,26 @@ router.get('/iniciar-sesion',
     pageController.logIn
 );
 
+router.get('/admin/empleados',
+    authController.checkIfUserIsAdmin,
+    pageController.renderEmployeeDashboard
+);
+
+router.get('/admin/platillos',
+    authController.checkIfUserHasAccess,
+    pageController.renderSaucerDashboard
+);
+
+router.get('/admin/salsas',
+    authController.checkIfUserHasAccess,
+    pageController.renderSauceDashboard
+);
+
+router.get('/admin/ordenes',
+    authController.checkIfUserHasAccess,
+    pageController.renderOrderDashboard
+)
+
 // This has always to be the last one
 router.get('*', pageController.notFoundPage);
 

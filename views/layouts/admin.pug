@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+        title La casa de las salsas
+        link(rel='stylesheet' href='/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/general.css')
+
+        block styles
+    body.d-flex.flex-column
+        .py-2.bg-dark
+            p.text-center.text-white Administración - La casa de las salsas
+            nav.container.navbar.navbar-expand-lg.navbar-dark.bg-dark
+                a(href='/')
+                    img(src='/assets/images/PapaTarasca.jpeg' height='50px')
+                button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#menu' aria-controls='menu' aria-expanded='false' aria-label='Toggle navigation')
+                    span.navbar-toggler-icon
+                #menu.collapse.navbar-collapse.ms-3
+                    ul.mt-3.mr-auto.mt-lg-0.navbar-nav.w-100
+                        .flex-row.d-flex.flex-column.flex-lg-row.justify-content-between.w-100
+                            .d-flex.flex-column.flex-lg-row
+                                if user.level === 3
+                                    li.navbar-item.active
+                                        a.nav-link(href='/admin/empleados') Empleados
+                                li.navbar-item.active
+                                    a.nav-link(href='/admin/platillos') Platillos
+                                li.navbar-item.active
+                                    a.nav-link(href='/admin/salsas') Salsas
+                                li.navbar-item.active
+                                    a.nav-link(href='/admin/ordenes') Órdenes
+                            .d-flex.flex-column.flex-lg-row
+                                li.navbar-item.active
+                                    a.nav-link(href="/cerrar-sesion") Cerrar sesión
+        block content
+
+        footer.p-3.bg-dark
+            p.m-0.text-center.text-muted La casa de las salsas
+
+        script(src='/js/bootstrap.min.js')
+
+        block scripts
