@@ -43,6 +43,22 @@ exports.logIn = (req, res) => {
     });
 }
 
+exports.renderEmployeeDashboard = async (req, res) => {
+    res.render('dashboard/employee');
+}
+
+exports.renderSaucerDashboard = async (req, res) => {
+    res.render('dashboard/saucer');
+}
+
+exports.renderSauceDashboard = async (req, res) => {
+    res.render('dashboard/sauce');
+}
+
+exports.renderOrderDashboard = async (req, res) => {
+    res.render('dashboard/order');
+}
+
 exports.notFoundPage = (req, res) => {
     res.render('notFound');
 }
